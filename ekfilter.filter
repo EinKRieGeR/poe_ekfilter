@@ -1,3 +1,4 @@
+﻿# Script edited with Filtration - https://github.com/ben-wallis/Filtration
 # LootFilter v 1.1 for PoE 3.5 by EinKRieGeR last edit 20.12.2018
 
 # Section: ***<< Unique Items >>***
@@ -45,8 +46,19 @@ Show
     ElderItem False
     ShaperItem False
     SocketGroup "RGB"
+    Height = 3
+    Width = 1
     Rarity < Unique
-    Class "Daggers" "Claws" "Boots" "Helmets" "Gloves"
+    SetBackgroundColor 75 75 75
+    SetBorderColor 255 0 0
+
+Show
+    ElderItem False
+    ShaperItem False
+    SocketGroup "RGB"
+    Height = 2
+    Width = 2
+    Rarity < Unique
     SetBackgroundColor 75 75 75
     SetBorderColor 255 0 0
 
