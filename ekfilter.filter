@@ -1,6 +1,22 @@
 ﻿# Script edited with Filtration - https://github.com/ben-wallis/Filtration
 # LootFilter v 1.1 for PoE 3.5 by EinKRieGeR last edit 20.12.2018
 
+# Section: ***<< ON OFF items >>***
+
+Hide
+    BaseType "Scroll of Wisdom" "Scroll Fragment"
+    SetTextColor 184 218 242
+    SetBackgroundColor 255 255 255 0
+    SetBorderColor 27 162 155
+    SetFontSize 30
+
+Hide
+    BaseType "Portal Scroll"
+    SetTextColor 184 218 242
+    SetBackgroundColor 255 255 255 0
+    SetBorderColor 27 162 155
+    SetFontSize 30
+
 # Section: ***<< Unique Items >>***
 
 Show
@@ -24,8 +40,7 @@ Show
     MinimapIcon 0 Green Triangle
 
 Show
-    Corrupted True
-    Class "Gem"
+    BaseType "Vaal Ancestral Warchief" "Vaal Arc" "Vaal Blade Vortex" "Vaal Blight" "Vaal Breach" "Vaal Clarity" "Vaal Cold Snap" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Double Strike" "Vaal Earthquake" "Vaal Fireball" "Vaal Flameblast" "Vaal Glacial Hammer" "Vaal Grace" "Vaal Ground Slam" "Vaal Haste" "Vaal Ice Nova" "Vaal Immortal Call" "Vaal Impurity of Fire" "Vaal Impurity of Ice" "Vaal Impurity of Lightning" "Vaal Lightning Strike" "Vaal Lightning Trap" "Vaal Lightning Warp" "Vaal Molten Shell" "Vaal Power Siphon" "Vaal Rain of Arrows" "Vaal Reave" "Vaal Righteous Fire" "Vaal Spark" "Vaal Spectral Throw" "Vaal Storm Call" "Vaal Summon Skeletons" "Vaal Burning Arrow"
     MinimapIcon 2 Green Triangle
 
 Show
@@ -236,6 +251,7 @@ Show
 
 Show
     Corrupted True
+    Rarity >= Rare
     Class "Amulet" "Belt"
     SetBorderColor 129 15 213 200
     SetFontSize 36
@@ -381,16 +397,16 @@ Show
 # Section: ***<< Currency >>***
 
 Show
-    BaseType "Mirror of Kalandra" "Exalted Shard" "Mirror Shard"
+    BaseType "Mirror of Kalandra" "Mirror Shard"
     SetTextColor 255 0 0
     SetBorderColor 255 0 0
     SetFontSize 45
-    PlayAlertSound 1 100
+    PlayAlertSound ShMirror 300
     MinimapIcon 0 Red Diamond
     PlayEffect Red
 
 Show
-    BaseType "Exalted Orb"
+    BaseType "Exalted Orb" "Exalted Shard"
     SetTextColor 255 0 0
     SetBorderColor 255 0 0
     SetFontSize 45
@@ -403,9 +419,9 @@ Show
     SetTextColor 255 0 255
     SetBorderColor 210 0 220
     SetFontSize 45
+    PlayAlertSound ShChaos 300
     MinimapIcon 1 Red Diamond
     PlayEffect Blue
-    CustomAlertSound "NANI.mp3"
 
 Show
     BaseType "Divine Orb"
@@ -457,20 +473,6 @@ Show
     SetFontSize 42
     PlayAlertSound 16 300
     MinimapIcon 1 Blue Diamond
-
-Hide
-    BaseType "Portal Scroll" "Scroll of Wisdom" "Scroll Fragment"
-    SetTextColor 184 218 242
-    SetBackgroundColor 255 255 255 0
-    SetBorderColor 27 162 155
-    SetFontSize 30
-
-Hide
-    BaseType "Portal Scroll" "Scroll of Wisdom" "Scroll Fragment"
-    SetTextColor 184 218 242
-    SetBackgroundColor 255 255 255 0
-    SetBorderColor 27 162 155
-    SetFontSize 30
 
 Show
     BaseType "Armourer's Scrap" "Blacksmith's Whetstone"
@@ -602,11 +604,11 @@ Show
 #    SetBorderColor 208 32 144
 #    SetFontSize 45
 
-Show
-    ItemLevel >= 86
-    BaseType "Vaal Axe" "Jewelled Foil" "Colossal Tower Shield"
-    SetBorderColor 74 230 58
-    SetFontSize 40
+#Show
+#    ItemLevel >= 86
+#    BaseType "Vaal Axe" "Jewelled Foil" "Colossal Tower Shield"
+#    SetBorderColor 74 230 58
+#    SetFontSize 40
 
 Show
     ItemLevel >= 86
