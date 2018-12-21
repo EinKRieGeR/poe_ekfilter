@@ -218,7 +218,7 @@ Show
 # Section: ***<< Veiled >>***
 
 Show
-    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled"
+    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled" "of Aisling's Veil"
     SetTextColor 74 230 58
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
