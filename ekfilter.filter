@@ -410,9 +410,9 @@ Show
     SetTextColor 255 0 0
     SetBorderColor 255 0 0
     SetFontSize 45
+    PlayAlertSound ShExalted 300
     MinimapIcon 0 Red Diamond
     PlayEffect Red
-    CustomAlertSound "richbtch.mp3"
 
 Show
     BaseType "Chaos Orb"
