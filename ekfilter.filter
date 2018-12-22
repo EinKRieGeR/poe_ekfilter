@@ -64,7 +64,7 @@ Show
     Height = 3
     Width = 1
     Rarity < Unique
-    SetBackgroundColor 75 75 75
+    SetBackgroundColor 0 0 0 255
     SetBorderColor 255 0 0
 
 Show
@@ -74,14 +74,8 @@ Show
     Height = 2
     Width = 2
     Rarity < Unique
-    SetBackgroundColor 75 75 75
+    SetBackgroundColor 0 0 0 255
     SetBorderColor 255 0 0
-
-# Section: ***<< Quest Items >>***
-
-Show
-    Class "Quest"
-    SetFontSize 45
 
 # Section: ***<< Flask >>***
 
@@ -218,7 +212,7 @@ Show
 # Section: ***<< Veiled >>***
 
 Show
-    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled" "of Aisling's Veil"
+    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled" "of Aisling's Veil" "of Jorgin's Veil"
     SetTextColor 74 230 58
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
@@ -323,6 +317,14 @@ Show
 # Section: ***<< Maps, fragments, misc >>***
 
 Show
+    BaseType "Stone of Passage"
+    SetTextColor 210 0 220
+    SetBorderColor 74 230 58
+    SetFontSize 45
+    PlayAlertSound 1 300
+    MinimapIcon 0 Blue Triangle
+
+Show
     Class "Piece"
     SetTextColor 0 0 0
     SetBackgroundColor 180 96 0
@@ -393,6 +395,12 @@ Show
     SetFontSize 28
     PlayAlertSound 3 100
     MinimapIcon 2 White Circle
+
+# # Section: ***<< Quest Items >>***
+
+Show
+    Class "Quest"
+    SetFontSize 45
 
 # Section: ***<< Currency >>***
 
