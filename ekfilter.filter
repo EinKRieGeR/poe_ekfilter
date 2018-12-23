@@ -221,6 +221,14 @@ Show
 # Section: ***<< Incursion >>***
 
 Show
+    BaseType "Stone of Passage"
+    SetTextColor 210 0 220
+    SetBorderColor 74 230 58
+    SetFontSize 45
+    PlayAlertSound 1 300
+    MinimapIcon 0 Blue Triangle
+
+Show
     Class "Incursion Item"
     SetTextColor 74 230 58
     SetFontSize 45
@@ -315,14 +323,6 @@ Show
     MinimapIcon 0 Red Star
 
 # Section: ***<< Maps, fragments, misc >>***
-
-Show
-    BaseType "Stone of Passage"
-    SetTextColor 210 0 220
-    SetBorderColor 74 230 58
-    SetFontSize 45
-    PlayAlertSound 1 300
-    MinimapIcon 0 Blue Triangle
 
 Show
     Class "Piece"
