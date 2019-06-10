@@ -1,21 +1,68 @@
-﻿# Script edited with Filtration - https://github.com/ben-wallis/Filtration
-# LootFilter v 1.1 for PoE 3.5 by EinKRieGeR last edit 20.12.2018
+# LootFilter v 1.4 for PoE 3.7 by EinKRieGeR last edit 10.06.2019
 
 # Section: ***<< ON OFF items >>***
 
-Hide
+Show
     BaseType "Scroll of Wisdom" "Scroll Fragment"
     SetTextColor 184 218 242
     SetBackgroundColor 255 255 255 0
     SetBorderColor 27 162 155
     SetFontSize 30
 
-Hide
+Show
     BaseType "Portal Scroll"
     SetTextColor 184 218 242
     SetBackgroundColor 255 255 255 0
     SetBorderColor 27 162 155
     SetFontSize 30
+
+Hide
+    Rarity = Normal
+    BaseType "Rock Breaker" "Stone Hammer" "Gavel"
+    SetBorderColor 175 96 37
+    SetFontSize 28
+
+Hide
+    Rarity = Normal
+    BaseType "Prophecy Wand"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+
+Hide
+    Rarity = Normal
+    BaseType "Occultist's Vestment"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+
+Hide
+    Rarity = Normal
+    BaseType "Sorcerer Boots"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+
+Hide
+    Rarity = Normal
+    BaseType "Agate Amulet"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+
+Hide
+    Rarity = Normal
+    BaseType "Leather Belt"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+
+Hide
+    Rarity = Normal
+    BaseType "Fiend Dagger"
+    SetBorderColor 175 96 37
+    SetFontSize 45
+	
+Show
+    Rarity = Normal
+    BaseType "Astral Plate"
+    SetBorderColor 175 96 37
+    SetFontSize 45
 
 # Section: ***<< Unique Items >>***
 
@@ -29,6 +76,8 @@ Show
     PlayEffect Brown
 
 # Section: ***<< Gems >>***
+# Rules for skill gems
+# there is problem - still dont have API for vaal gems 
 
 Show
     Class "Gem"
@@ -39,16 +88,34 @@ Show
     PlayAlertSound 6 100
     MinimapIcon 0 Green Triangle
 
+#Show vaal gems - there can be white spots (new gems or my misses)
 Show
     BaseType "Vaal Ancestral Warchief" "Vaal Arc" "Vaal Blade Vortex" "Vaal Blight" "Vaal Breach" "Vaal Clarity" "Vaal Cold Snap" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Double Strike" "Vaal Earthquake" "Vaal Fireball" "Vaal Flameblast" "Vaal Glacial Hammer" "Vaal Grace" "Vaal Ground Slam" "Vaal Haste" "Vaal Ice Nova" "Vaal Immortal Call" "Vaal Impurity of Fire" "Vaal Impurity of Ice" "Vaal Impurity of Lightning" "Vaal Lightning Strike" "Vaal Lightning Trap" "Vaal Lightning Warp" "Vaal Molten Shell" "Vaal Power Siphon" "Vaal Rain of Arrows" "Vaal Reave" "Vaal Righteous Fire" "Vaal Spark" "Vaal Spectral Throw" "Vaal Storm Call" "Vaal Summon Skeletons" "Vaal Burning Arrow"
     MinimapIcon 2 Green Triangle
+	
+# Show gems with quality >= 20, even vaal and corrupted
+Show
+    Quality >= 20
+    Class "Gem"
+    SetFontSize 42
+	SetBorderColor 255 0 0 255
+    MinimapIcon 1 Green Triangle
 
+# Show gems with quality > 10, even vaal and corrupted
 Show
     Quality >= 10
     Class "Gem"
-    SetFontSize 42
+    SetFontSize 33
     MinimapIcon 1 Green Triangle
+	
+# Show gems with quality < 9 > 5, even vaal and corrupted
+Show
+	Quality <= 9
+    Quality >= 5
+    Class "Gem"
+    SetFontSize 25
 
+# Hide skill gems - pointless to show
 Hide
     Class "Gem"
     SetBackgroundColor 0 0 0 150
@@ -64,8 +131,9 @@ Show
     Height = 3
     Width = 1
     Rarity < Unique
-    SetBackgroundColor 0 0 0 255
-    SetBorderColor 255 0 0
+    SetTextColor 0 0 0 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 0 0 255
 
 Show
     ElderItem False
@@ -74,8 +142,9 @@ Show
     Height = 2
     Width = 2
     Rarity < Unique
-    SetBackgroundColor 0 0 0 255
-    SetBorderColor 255 0 0
+    SetTextColor 0 0 0 255
+    SetBackgroundColor 0 0 0
+    SetBorderColor 255 0 0 255
 
 # Section: ***<< Flask >>***
 
@@ -99,25 +168,15 @@ Hide
 
 Show
     Rarity < Unique
+    Class "Utility Flasks"
+    BaseType "Flask"
+    SetFontSize 20
+
+Show
+    Rarity < Unique
     BaseType "Flask"
 
 # Section: ***<< Jewels >>***
-
-Show
-    Rarity = Magic
-    Class "Jewel"
-    SetTextColor 0 0 255
-    SetBackgroundColor 0 128 0
-    SetBorderColor 0 0 200
-    SetFontSize 40
-
-Show
-    Rarity = Magic
-    Class "Abyss Jewel"
-    SetTextColor 0 0 255
-    SetBackgroundColor 255 165 0
-    SetBorderColor 0 0 200
-    SetFontSize 40
 
 Show
     Rarity = Rare
@@ -185,7 +244,7 @@ Show
 Show
     ItemLevel >= 84
     Rarity <= Rare
-    BaseType "Talisman" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt" "Steel Ring" "Opal Ring"
+    BaseType "Talisman" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt" "Steel Ring" "Opal Ring" "Ornate Quiver"
     SetTextColor 0 0 0
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
@@ -194,7 +253,7 @@ Show
 
 Show
     Rarity <= Rare
-    BaseType "Talisman" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt" "Steel Ring" "Opal Ring"
+    BaseType "Talisman" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Crystal Belt" "Steel Ring" "Opal Ring" "Ornate Quiver"
     SetTextColor 255 255 255
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
@@ -208,11 +267,61 @@ Show
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
     SetFontSize 40
-
-# Section: ***<< Veiled >>***
+	
+# Section: ***<< Ascendancy >>***
 
 Show
-    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled" "of Aisling's Veil" "of Jorgin's Veil"
+    AnyEnchantment True
+    SetTextColor 74 230 58
+    SetBackgroundColor 127 127 127
+    SetFontSize 40
+	
+# Section: ***<< Bestiary >>***
+
+Show
+    Identified True
+    HasExplicitMod "of Craiceann" "of Farrul" "of Fenumus" "of Saqawal"
+    SetTextColor 255 200 0
+    SetBackgroundColor 150 0 0
+
+# Section: ***<< Betrayal >>***
+
+Show
+    HasExplicitMod "Guff's Veiled" "Leo's Veiled" "Elreon's Veiled" "Haku's Veiled" "Vagan's Veiled" "It That Fled's Veiled" "Korell's Veiled" "of the Veil" "of Hillock's Veil" "of Cameria's Veil" "of Riker's Veil" "Tora's Veiled" "Veiled" "of Aisling's Veil" "of Jorgin's Veil" "of Janus' Veil"
+    SetTextColor 74 230 58
+    SetBackgroundColor 255 125 0
+    SetBorderColor 255 255 255
+    SetFontSize 44
+
+# Section: ***<< Breach >>***
+
+Show
+    Class "Rings"
+    BaseType "Breach Ring"
+    SetTextColor 255 255 0 255
+    SetBackgroundColor 210 0 220
+    SetBorderColor 255 255 255 0
+
+# Section: ***<< Delve >>***
+
+Show
+    HasExplicitMod "of the Underground" "Subterranean"
+    SetTextColor 74 230 58
+    SetBackgroundColor 255 125 0
+    SetBorderColor 255 255 255
+    SetFontSize 44
+
+# Section: ***<< Synthesis >>***
+
+Show
+    FracturedItem True
+    SetTextColor 74 230 58
+    SetBackgroundColor 255 125 0
+    SetBorderColor 255 255 255
+    SetFontSize 44
+
+Show
+    SynthesisedItem True
     SetTextColor 74 230 58
     SetBackgroundColor 255 125 0
     SetBorderColor 255 255 255
@@ -225,7 +334,7 @@ Show
     SetTextColor 210 0 220
     SetBorderColor 74 230 58
     SetFontSize 45
-    PlayAlertSound 1 300
+    PlayAlertSound 4 300
     MinimapIcon 0 Blue Triangle
 
 Show
@@ -262,37 +371,7 @@ Show
 
 Hide
     Rarity = Normal
-    BaseType "Rock Breaker" "Stone Hammer" "Gavel"
-    SetBorderColor 175 96 37
-    SetFontSize 28
-
-Hide
-    Rarity = Normal
-    BaseType "Prophecy Wand"
-    SetBorderColor 175 96 37
-    SetFontSize 28
-
-Hide
-    Rarity = Normal
-    BaseType "Occultist's Vestment"
-    SetBorderColor 175 96 37
-    SetFontSize 28
-
-Hide
-    Rarity = Normal
-    BaseType "Sorcerer Boots"
-    SetBorderColor 175 96 37
-    SetFontSize 28
-
-Hide
-    Rarity = Normal
-    BaseType "Agate Amulet"
-    SetBorderColor 175 96 37
-    SetFontSize 28
-
-Hide
-    Rarity = Normal
-    BaseType "Leather Belt"
+    BaseType "Fiend Dagger"
     SetBorderColor 175 96 37
     SetFontSize 45
 
@@ -475,6 +554,13 @@ Show
     PlayAlertSound ShAlchemy 300
 
 Show
+    BaseType "Blessed Orb"
+    SetTextColor 27 162 155
+    SetBorderColor 180 96 0
+    SetFontSize 42
+    PlayAlertSound ShBlessed 300
+
+Show
     BaseType "Silver Coin"
     SetTextColor 27 162 155
     SetBorderColor 180 96 0
@@ -485,11 +571,17 @@ Show
 Show
     BaseType "Armourer's Scrap" "Blacksmith's Whetstone"
     SetTextColor 255 215 0
-    SetFontSize 30
-
+    SetFontSize 25
+    SetBorderColor 255 215 0
 Show
-    BaseType "Orb of Alteration" "Orb of Chance" "Armourer's Scrap" "Chromatic Orb" "Orb of Transmutation" "Orb of Augmentation" "Blacksmith's Whetstone" "Orb of Scouring" "Jeweller's Orb"
+    BaseType "Glassblower's Bauble" "Cartographer's Chisel" "Gemcutter's Prism"
     SetTextColor 255 215 0
+    SetFontSize 42
+    SetBorderColor 255 215 0
+Show
+    BaseType "Orb of Alteration" "Orb of Chance" "Chromatic Orb" "Orb of Transmutation" "Orb of Augmentation" "Orb of Scouring" "Jeweller's Orb"
+    SetTextColor 27 162 155
+    SetBorderColor 180 96 0
     SetFontSize 42
 
 Show
@@ -514,6 +606,12 @@ Show
     SetFontSize 42
 
 Show
+    BaseType "Incubator"
+    SetTextColor 27 162 155
+    SetBorderColor 27 162 155
+    SetFontSize 42
+
+Show
     Class "Stackable Currency"
     BaseType "Stacked Deck"
     SetTextColor 184 218 242
@@ -530,13 +628,13 @@ Show
 
 Hide
     Class "Divination Card"
-    BaseType "The King's Blade" "The Carrion Crow" "Struck by Lightning" "The Rabid Rhoa" "The Lich" "The Endurance" "Destined to Crumble" "The Inoculated" "The Twins"
-    SetBackgroundColor 0 128 0
+    BaseType "The King's Blade" "Lantador's Lost Love" "The Carrion Crow" "Struck by Lightning" "The Rabid Rhoa" "The Lich" "The Endurance" "Destined to Crumble" "The Inoculated" "The Twins" "The Spoiled Prince" "Blessing of God" "The Golden Era" "The Twins" "Turn the Other Cheek" "The Jester" "Merciless Armament" "The Undisputed" "The Tyrant" "Prosperity" "The Lord in Black" "The Road to Power" "The Surgeon" "The Sigil" "The Endurance" "Shard of Fate" "The Web" "The Warden" "The Lover" "The Army of Blood" "The Blazing Fire" "A Mother's Parting Gift" "The Wolf's Shadow" "The Witch" "The Hermit" "The Visionary" "Death" "Dark Temptation" "The Sun" "The Lunaris Priestess" "Thunderous Skies" "Might is Right" "Tranquillity" "Anarchy's Price" "The Scarred Meadow" "The Coming Storm" "The Lion"
+    SetBackgroundColor 0 128 0 
     SetFontSize 24
 
 Show
     Class "Divination Card"
-    BaseType "The Doctor" "The Fiend" "Abandoned Wealth" "The Last One Standing" "The Offering" "The Queen" "House of Mirrors" "The Hunger" "Last Hope" "Pride Before the Fall" "The Brittle Emperor" "The Immortal"
+    BaseType "The Doctor" "The Nurse" "The Fiend" "Abandoned Wealth" "The Offering" "The Queen" "House of Mirrors" "The Hunger" "Last Hope" "Pride Before the Fall" "The Brittle Emperor" "The Immortal" "The Vast"
     SetTextColor 150 0 0
     SetBackgroundColor 0 128 0
     SetBorderColor 255 255 255
@@ -552,13 +650,6 @@ Show
     SetFontSize 35
     PlayAlertSound 7 100
     MinimapIcon 1 Green Square
-
-Show
-    Class "Divination Card"
-    BaseType "Turn the Other Cheek"
-    SetBackgroundColor 0 128 0
-    SetFontSize 24
-    MinimapIcon 2 Green Square
 
 Show
     Class "Divination Card"
@@ -604,51 +695,51 @@ Show
     PlayAlertSound 15 100
     MinimapIcon 0 Brown Hexagon
 
-#Show
-#    Rarity = Rare
-#    BaseType "Jewelled Foil" "Vaal Rapier" "Harpy Rapier" "Dragoon Sword" "Spiraled Foil"
-#    SetTextColor 0 100 150 200
-#    SetBackgroundColor 231 180 120
-#    SetBorderColor 208 32 144
-#    SetFontSize 45
-
-#Show
-#    ItemLevel >= 86
-#    BaseType "Vaal Axe" "Jewelled Foil" "Colossal Tower Shield"
-#    SetBorderColor 74 230 58
-#    SetFontSize 40
-
 Show
-    ItemLevel >= 86
-    Rarity = Normal
-    SetBorderColor 74 230 58
-    SetFontSize 25
-
-Show
-    Rarity = Rare
+    ItemLevel >= 84
+    Rarity >= Normal
     BaseType "Titanium Spirit Shield" "Lion Pelt" "Hubris Circlet" "Assassin's Garb" "Zodiac Leather" "Vaal Regalia" "Saintly Chainmail" "Saint's Hauberk" "Glorious Plate" "Astral Plate" "Full Dragonscale" "General's Brigandine" "Triumphant Lamellar" "Sacrificial Garb" "Slink Boots" "Assassin's Boots" "Murder Boots" "Sorcerer Boots" "Crusader Boots" "Titan Greaves" "Dragonscale Boots" "Slink Gloves" "Murder Mitts" "Sorcerer Gloves" "Crusader Gloves" "Titan Gauntlets" "Dragonscale Gauntlets" "Vaal Mask" "Deicide Mask" "Prophet Crown" "Praetor Crown" "Royal Burgonet" "Pig-Faced Bascinet" "Nightmare Bascinet" "Imperial Buckler"
-
-Show
-    ItemLevel >= 64
-    ItemLevel <= 83
-    Rarity = Rare
-    Class "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Staves" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Helmets" "Boots" "Gloves" "Body Armours"
-    SetTextColor 255 255 119 172
-    SetBackgroundColor 0 0 0 154
-    SetFontSize 26
+    SetBorderColor 210 0 220
 
 Show
     ItemLevel >= 84
     Rarity >= Rare
     SetBorderColor 74 230 58
 
+Hide
+    ItemLevel >= 75
+    ItemLevel <= 83
+    Rarity = Rare
+    Class "Two Hand" "One Hand" "Claw" "Dagger" "Staves" "Sceptre" "Wand" "Bows" "Quivers" "Shields" "Body Armours"
+
 Show
-    Rarity >= Rare
-    Class "Rings" "Amulets"
-    SetFontSize 45
+    ItemLevel >= 60
+    ItemLevel <= 74
+    Rarity = Rare
+    Class "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Staves" "Helmets" "Boots" "Gloves" "Body Armours" "Bows" "Belts" "Rings" "Amulets"
+    SetBorderColor 255 165 0 255
+    SetTextColor 255 165 0 255
+
+Hide
+    Class "Belts"
+    BaseType "Cloth Belt" "Chain Belt" "Studded Belt" "Vanguard Belt"
+
+Hide
+    Class "Amulets"
+    BaseType "Coral Amulet" "Paua Amulet" "Gold Amulet"
+
+Hide
+    Class "Rings"
+    BaseType "Iron Ring" "Gold Ring" "Amethyst Ring"
 
 Show
     Rarity >= Rare
+    Class "Rings" "Amulets" "Belts"
+    SetFontSize 45
+
+Show
+    Rarity = Rare
+
 
 # Section: ***<< Jewelry Leveling Racing Items >>***
 
